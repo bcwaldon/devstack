@@ -859,7 +859,7 @@ if is_service_enabled g-reg; then
         sudo mkdir -p $GLANCE_CONF_DIR
     fi
     sudo chown `whoami` $GLANCE_CONF_DIR
-    GLANCE_IMAGE_DIR=$DEST/glance/images
+    GLANCE_IMAGE_DIR=${GLANCE_IMAGE_DIR:-$DEST/glance/images}
     # Delete existing images
     rm -rf $GLANCE_IMAGE_DIR
 
